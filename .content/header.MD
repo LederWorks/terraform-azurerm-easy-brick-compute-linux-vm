@@ -1,0 +1,18 @@
+# terraform-provider-easy-category-purpose
+LederWorks Easy Category Purpose Module
+
+## Authors
+  - [Bence Bánó](mailto:bence.bano@lederworks.com)
+
+## About This Module
+This module implements the [SECTION](https://lederworks.com/docs/microsoft-azure/bricks/compute/#section) reference Insight.
+
+## How to Use This Modul
+- Ensure Azure credentials are [in place](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs#authenticating-to-azure) (e.g. `az login` and `az account set --subscription="SUBSCRIPTION_ID"` on your workstation)
+    - Owner role or equivalent is required!
+- Ensure pre-requisite resources are created.
+- Create a Terraform configuration that pulls in this module and specifies values for the required variables.
+
+## Disclaimer / Known Issues
+- Disclaimer
+- Known Issues
