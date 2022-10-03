@@ -1,9 +1,7 @@
-
 name: Generate README.MD
+
 on:
-  push:
-    branches:
-      - main
+  - pull_request
 
 jobs:
   docs:
@@ -11,14 +9,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: main
+        ref: ${{ github.event.pull_request.head.ref }}
 
     - name: Render terraform docs inside the README.MD and push changes back to PR branch
       uses: terraform-docs/gh-actions@v1.0.0
       with:
         working-dir: .
-        config-file: .content/.terraform-docs.yml
+        config-file: .config/.terraform-docs.yml
         output-file: README.md
         output-method: inject
+        output-format: markdown document
         git-push: "true"
         git-commit-message: "terraform-docs: autogenerate README.MD"
